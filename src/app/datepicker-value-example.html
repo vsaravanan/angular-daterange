@@ -1,0 +1,19 @@
+<p>
+  <mat-form-field>
+    <input matInput
+           placeholder="Choose a date"
+           #resultPickerModel="ngModel"
+           [satDatepicker]="resultPicker"
+           [(ngModel)]="date"
+           (dateInput)="onDateInput($event)"
+           (dateChange)="onDateChange($event)">
+    <sat-datepicker
+            #resultPicker [rangeMode]="true">
+    </sat-datepicker>
+    <sat-datepicker-toggle matSuffix [for]="resultPicker"></sat-datepicker-toggle>
+  </mat-form-field>
+</p>
+<p>Last input: {{lastDateInput}}</p>
+<p>Last change: {{lastDateChange}}</p>
+<p>Last input: {{lastDateInput?.begin}} {{lastDateInput?.end}} </p>
+<p>Last change: {{lastDateChange?.begin}} {{lastDateChange?.end}} </p>
